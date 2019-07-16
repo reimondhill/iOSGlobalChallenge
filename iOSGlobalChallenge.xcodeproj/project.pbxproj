@@ -13,6 +13,24 @@
 		CFE8BD1A22DCEB7A00A861C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFE8BD1822DCEB7A00A861C9 /* LaunchScreen.storyboard */; };
 		CFE8BD2522DCEB7A00A861C9 /* iOSGlobalChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD2422DCEB7A00A861C9 /* iOSGlobalChallengeTests.swift */; };
 		CFE8BD3022DCEB7A00A861C9 /* iOSGlobalChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD2F22DCEB7A00A861C9 /* iOSGlobalChallengeUITests.swift */; };
+		CFE8BD4022DCF3E500A861C9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD3F22DCF3E500A861C9 /* Network.swift */; };
+		CFE8BD4222DD245D00A861C9 /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4122DD245D00A861C9 /* AppNetwork.swift */; };
+		CFE8BD4722DD24BE00A861C9 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4522DD24B700A861C9 /* NSObjectExtension.swift */; };
+		CFE8BD4A22DD268D00A861C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4922DD268900A861C9 /* Constants.swift */; };
+		CFE8BD4B22DD269000A861C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4822DD268900A861C9 /* StyleManager.swift */; };
+		CFE8BD4D22DD27C700A861C9 /* PathResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4C22DD27C700A861C9 /* PathResponse.swift */; };
+		CFE8BD4F22DD283E00A861C9 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4E22DD283E00A861C9 /* ErrorResponse.swift */; };
+		CFE8BD5122DD289600A861C9 /* CodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD5022DD289600A861C9 /* CodeResponse.swift */; };
+		CFE8BD5322DD294E00A861C9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD5222DD294E00A861C9 /* NetworkManager.swift */; };
+		CFE8BD5622DDAF0700A861C9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE8BD5522DDAF0700A861C9 /* RxSwift.framework */; };
+		CFE8BD5822DDAF0F00A861C9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE8BD5722DDAF0F00A861C9 /* RxCocoa.framework */; };
+		CFE8BD5D22DDC74600A861C9 /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD5C22DDC74600A861C9 /* UIVIewExtension.swift */; };
+		CFE8BD5F22DDC7C400A861C9 /* CodeGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD5E22DDC7C400A861C9 /* CodeGeneratorViewController.swift */; };
+		CFE8BD6122DDC7E000A861C9 /* CodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6022DDC7E000A861C9 /* CodeGeneratorView.swift */; };
+		CFE8BD6322DDC84600A861C9 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6222DDC84600A861C9 /* BaseLabel.swift */; };
+		CFE8BD6522DDC9C800A861C9 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6422DDC9C800A861C9 /* BaseButton.swift */; };
+		CFE8BD6722DDD09C00A861C9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6622DDD09C00A861C9 /* UIButtonExtension.swift */; };
+		CFE8BD6922DDD22600A861C9 /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6822DDD22600A861C9 /* UIEdgeInsetsExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +63,25 @@
 		CFE8BD2B22DCEB7A00A861C9 /* iOSGlobalChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSGlobalChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE8BD2F22DCEB7A00A861C9 /* iOSGlobalChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSGlobalChallengeUITests.swift; sourceTree = "<group>"; };
 		CFE8BD3122DCEB7A00A861C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE8BD3F22DCF3E500A861C9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CFE8BD4122DD245D00A861C9 /* AppNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetwork.swift; sourceTree = "<group>"; };
+		CFE8BD4522DD24B700A861C9 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		CFE8BD4622DD24B800A861C9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		CFE8BD4822DD268900A861C9 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		CFE8BD4922DD268900A861C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CFE8BD4C22DD27C700A861C9 /* PathResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathResponse.swift; sourceTree = "<group>"; };
+		CFE8BD4E22DD283E00A861C9 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CFE8BD5022DD289600A861C9 /* CodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeResponse.swift; sourceTree = "<group>"; };
+		CFE8BD5222DD294E00A861C9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CFE8BD5522DDAF0700A861C9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		CFE8BD5722DDAF0F00A861C9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		CFE8BD5C22DDC74600A861C9 /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
+		CFE8BD5E22DDC7C400A861C9 /* CodeGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorViewController.swift; sourceTree = "<group>"; };
+		CFE8BD6022DDC7E000A861C9 /* CodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorView.swift; sourceTree = "<group>"; };
+		CFE8BD6222DDC84600A861C9 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		CFE8BD6422DDC9C800A861C9 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		CFE8BD6622DDD09C00A861C9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		CFE8BD6822DDD22600A861C9 /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE8BD5622DDAF0700A861C9 /* RxSwift.framework in Frameworks */,
+				CFE8BD5822DDAF0F00A861C9 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +118,7 @@
 				CFE8BD2322DCEB7A00A861C9 /* iOSGlobalChallengeTests */,
 				CFE8BD2E22DCEB7A00A861C9 /* iOSGlobalChallengeUITests */,
 				CFE8BD0A22DCEB7900A861C9 /* Products */,
+				CFE8BD5422DDAF0700A861C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				CFE8BD0C22DCEB7900A861C9 /* AppDelegate.swift */,
+				CFE8BD4322DD247800A861C9 /* Helpers */,
+				CFE8BD3E22DCF3D500A861C9 /* Model */,
+				CFE8BD5B22DDC6EE00A861C9 /* Views */,
+				CFE8BD5A22DDC6D700A861C9 /* ViewControllers */,
 				CFE8BD3D22DCEB9900A861C9 /* SupportingFiles */,
 			);
 			path = iOSGlobalChallenge;
@@ -130,6 +174,68 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		CFE8BD3E22DCF3D500A861C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD3F22DCF3E500A861C9 /* Network.swift */,
+				CFE8BD4122DD245D00A861C9 /* AppNetwork.swift */,
+				CFE8BD4C22DD27C700A861C9 /* PathResponse.swift */,
+				CFE8BD5022DD289600A861C9 /* CodeResponse.swift */,
+				CFE8BD4E22DD283E00A861C9 /* ErrorResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFE8BD4322DD247800A861C9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD4422DD249000A861C9 /* Extensions */,
+				CFE8BD4922DD268900A861C9 /* Constants.swift */,
+				CFE8BD5222DD294E00A861C9 /* NetworkManager.swift */,
+				CFE8BD4822DD268900A861C9 /* StyleManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CFE8BD4422DD249000A861C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD4522DD24B700A861C9 /* NSObjectExtension.swift */,
+				CFE8BD6622DDD09C00A861C9 /* UIButtonExtension.swift */,
+				CFE8BD6822DDD22600A861C9 /* UIEdgeInsetsExtension.swift */,
+				CFE8BD5C22DDC74600A861C9 /* UIVIewExtension.swift */,
+				CFE8BD4622DD24B800A861C9 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CFE8BD5422DDAF0700A861C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD5722DDAF0F00A861C9 /* RxCocoa.framework */,
+				CFE8BD5522DDAF0700A861C9 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFE8BD5A22DDC6D700A861C9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD5E22DDC7C400A861C9 /* CodeGeneratorViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CFE8BD5B22DDC6EE00A861C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD6422DDC9C800A861C9 /* BaseButton.swift */,
+				CFE8BD6222DDC84600A861C9 /* BaseLabel.swift */,
+				CFE8BD6022DDC7E000A861C9 /* CodeGeneratorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +246,7 @@
 				CFE8BD0522DCEB7900A861C9 /* Sources */,
 				CFE8BD0622DCEB7900A861C9 /* Frameworks */,
 				CFE8BD0722DCEB7900A861C9 /* Resources */,
+				CFE8BD5922DDAF1D00A861C9 /* Carthage Run Script */,
 			);
 			buildRules = (
 			);
@@ -255,13 +362,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CFE8BD5922DDAF1D00A861C9 /* Carthage Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "Carthage Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFE8BD0522DCEB7900A861C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CFE8BD1522DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodeld in Sources */,
+				CFE8BD4722DD24BE00A861C9 /* NSObjectExtension.swift in Sources */,
+				CFE8BD6522DDC9C800A861C9 /* BaseButton.swift in Sources */,
+				CFE8BD4D22DD27C700A861C9 /* PathResponse.swift in Sources */,
+				CFE8BD6922DDD22600A861C9 /* UIEdgeInsetsExtension.swift in Sources */,
 				CFE8BD0D22DCEB7900A861C9 /* AppDelegate.swift in Sources */,
+				CFE8BD6322DDC84600A861C9 /* BaseLabel.swift in Sources */,
+				CFE8BD5322DD294E00A861C9 /* NetworkManager.swift in Sources */,
+				CFE8BD6722DDD09C00A861C9 /* UIButtonExtension.swift in Sources */,
+				CFE8BD4222DD245D00A861C9 /* AppNetwork.swift in Sources */,
+				CFE8BD5D22DDC74600A861C9 /* UIVIewExtension.swift in Sources */,
+				CFE8BD4022DCF3E500A861C9 /* Network.swift in Sources */,
+				CFE8BD4F22DD283E00A861C9 /* ErrorResponse.swift in Sources */,
+				CFE8BD4A22DD268D00A861C9 /* Constants.swift in Sources */,
+				CFE8BD5F22DDC7C400A861C9 /* CodeGeneratorViewController.swift in Sources */,
+				CFE8BD6122DDC7E000A861C9 /* CodeGeneratorView.swift in Sources */,
+				CFE8BD4B22DD269000A861C9 /* StyleManager.swift in Sources */,
+				CFE8BD5122DD289600A861C9 /* CodeResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +576,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSGlobalChallenge/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +599,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSGlobalChallenge/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
