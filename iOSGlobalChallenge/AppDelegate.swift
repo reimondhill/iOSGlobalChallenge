@@ -17,7 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    
+        print(logClassName, "Welcome to Global Challenge by Ramon Haro Marqués")
+        
+        setupNavigationBarStyle()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: CodeGeneratorViewController(networkManager: NetworkManager.shared))
+        
         return true
     }
 
@@ -91,4 +99,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+
+private extension AppDelegate{
+    
+    func setupNavigationBarStyle() {
+        
+        UINavigationBar.appearance().barTintColor = UIColor.navigationBarBackground
+        UINavigationBar.appearance().tintColor = UIColor.navigationBarTint
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.navigationBarText]
+        
+        UINavigationBar.appearance().isTranslucent = false
+        
+        UITabBar.appearance().barTintColor = UIColor.navigationBarBackground
+        UITabBar.appearance().tintColor = UIColor.navigationBarTint
+    }
+    
+}
+
 

@@ -107,8 +107,8 @@ private extension BaseButton{
             
             setBackgroundColor(UIColor.mainButtonDisabledBackground, for: .disabled)
             
-            setTitleColor(UIColor.mainButtonTextColor, for: .normal)
-            setTitleColor(UIColor.mainButtonDisabledTextColor, for: .disabled)
+            setTitleColor(UIColor.mainButtonText, for: .normal)
+            setTitleColor(UIColor.mainButtonDisabledText, for: .disabled)
             
             if let titleLabel = titleLabel{
                 titleLabel.font = UIFont.systemFont(ofSize: TextSize.normal, weight: .semibold)

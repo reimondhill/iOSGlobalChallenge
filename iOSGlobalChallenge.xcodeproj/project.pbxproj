@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF674C0122DE325800C035DF /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF674C0022DE325800C035DF /* ToastSwiftFramework.framework */; };
 		CFE8BD0D22DCEB7900A861C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD0C22DCEB7900A861C9 /* AppDelegate.swift */; };
 		CFE8BD1522DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD1322DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodeld */; };
 		CFE8BD1722DCEB7A00A861C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE8BD1622DCEB7A00A861C9 /* Assets.xcassets */; };
@@ -19,7 +20,6 @@
 		CFE8BD4A22DD268D00A861C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4922DD268900A861C9 /* Constants.swift */; };
 		CFE8BD4B22DD269000A861C9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4822DD268900A861C9 /* StyleManager.swift */; };
 		CFE8BD4D22DD27C700A861C9 /* PathResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4C22DD27C700A861C9 /* PathResponse.swift */; };
-		CFE8BD4F22DD283E00A861C9 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4E22DD283E00A861C9 /* ErrorResponse.swift */; };
 		CFE8BD5122DD289600A861C9 /* CodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD5022DD289600A861C9 /* CodeResponse.swift */; };
 		CFE8BD5322DD294E00A861C9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD5222DD294E00A861C9 /* NetworkManager.swift */; };
 		CFE8BD5622DDAF0700A861C9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE8BD5522DDAF0700A861C9 /* RxSwift.framework */; };
@@ -31,6 +31,10 @@
 		CFE8BD6522DDC9C800A861C9 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6422DDC9C800A861C9 /* BaseButton.swift */; };
 		CFE8BD6722DDD09C00A861C9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6622DDD09C00A861C9 /* UIButtonExtension.swift */; };
 		CFE8BD6922DDD22600A861C9 /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6822DDD22600A861C9 /* UIEdgeInsetsExtension.swift */; };
+		CFE8BD6B22DDD71700A861C9 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6A22DDD71700A861C9 /* UINavigationControllerExtension.swift */; };
+		CFE8BD6D22DDD75600A861C9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD6C22DDD75600A861C9 /* BaseViewController.swift */; };
+		CFE8BD6F22DDDFFE00A861C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFE8BD6E22DDDFFE00A861C9 /* Localizable.strings */; };
+		CFE8BD7222DDE5A600A861C9 /* CodeGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD7122DDE5A600A861C9 /* CodeGeneratorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF674C0022DE325800C035DF /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
 		CFE8BD0922DCEB7900A861C9 /* iOSGlobalChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSGlobalChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE8BD0C22DCEB7900A861C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE8BD1422DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSGlobalChallenge.xcdatamodel; sourceTree = "<group>"; };
@@ -70,7 +75,6 @@
 		CFE8BD4822DD268900A861C9 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		CFE8BD4922DD268900A861C9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CFE8BD4C22DD27C700A861C9 /* PathResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathResponse.swift; sourceTree = "<group>"; };
-		CFE8BD4E22DD283E00A861C9 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CFE8BD5022DD289600A861C9 /* CodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeResponse.swift; sourceTree = "<group>"; };
 		CFE8BD5222DD294E00A861C9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CFE8BD5522DDAF0700A861C9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -82,6 +86,10 @@
 		CFE8BD6422DDC9C800A861C9 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		CFE8BD6622DDD09C00A861C9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		CFE8BD6822DDD22600A861C9 /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
+		CFE8BD6A22DDD71700A861C9 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		CFE8BD6C22DDD75600A861C9 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CFE8BD6E22DDDFFE00A861C9 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CFE8BD7122DDE5A600A861C9 /* CodeGeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 			files = (
 				CFE8BD5622DDAF0700A861C9 /* RxSwift.framework in Frameworks */,
 				CFE8BD5822DDAF0F00A861C9 /* RxCocoa.framework in Frameworks */,
+				CF674C0122DE325800C035DF /* ToastSwiftFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +147,7 @@
 				CFE8BD0C22DCEB7900A861C9 /* AppDelegate.swift */,
 				CFE8BD4322DD247800A861C9 /* Helpers */,
 				CFE8BD3E22DCF3D500A861C9 /* Model */,
+				CFE8BD7022DDE56C00A861C9 /* ViewModel */,
 				CFE8BD5B22DDC6EE00A861C9 /* Views */,
 				CFE8BD5A22DDC6D700A861C9 /* ViewControllers */,
 				CFE8BD3D22DCEB9900A861C9 /* SupportingFiles */,
@@ -170,6 +180,7 @@
 				CFE8BD1822DCEB7A00A861C9 /* LaunchScreen.storyboard */,
 				CFE8BD1B22DCEB7A00A861C9 /* Info.plist */,
 				CFE8BD1322DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodeld */,
+				CFE8BD6E22DDDFFE00A861C9 /* Localizable.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -181,7 +192,6 @@
 				CFE8BD4122DD245D00A861C9 /* AppNetwork.swift */,
 				CFE8BD4C22DD27C700A861C9 /* PathResponse.swift */,
 				CFE8BD5022DD289600A861C9 /* CodeResponse.swift */,
-				CFE8BD4E22DD283E00A861C9 /* ErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +213,7 @@
 				CFE8BD4522DD24B700A861C9 /* NSObjectExtension.swift */,
 				CFE8BD6622DDD09C00A861C9 /* UIButtonExtension.swift */,
 				CFE8BD6822DDD22600A861C9 /* UIEdgeInsetsExtension.swift */,
+				CFE8BD6A22DDD71700A861C9 /* UINavigationControllerExtension.swift */,
 				CFE8BD5C22DDC74600A861C9 /* UIVIewExtension.swift */,
 				CFE8BD4622DD24B800A861C9 /* UIViewControllerExtension.swift */,
 			);
@@ -212,6 +223,7 @@
 		CFE8BD5422DDAF0700A861C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF674C0022DE325800C035DF /* ToastSwiftFramework.framework */,
 				CFE8BD5722DDAF0F00A861C9 /* RxCocoa.framework */,
 				CFE8BD5522DDAF0700A861C9 /* RxSwift.framework */,
 			);
@@ -221,6 +233,7 @@
 		CFE8BD5A22DDC6D700A861C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFE8BD6C22DDD75600A861C9 /* BaseViewController.swift */,
 				CFE8BD5E22DDC7C400A861C9 /* CodeGeneratorViewController.swift */,
 			);
 			path = ViewControllers;
@@ -234,6 +247,14 @@
 				CFE8BD6022DDC7E000A861C9 /* CodeGeneratorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CFE8BD7022DDE56C00A861C9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFE8BD7122DDE5A600A861C9 /* CodeGeneratorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFE8BD1A22DCEB7A00A861C9 /* LaunchScreen.storyboard in Resources */,
+				CFE8BD6F22DDDFFE00A861C9 /* Localizable.strings in Resources */,
 				CFE8BD1722DCEB7A00A861C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,11 +395,17 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,17 +423,19 @@
 				CFE8BD6522DDC9C800A861C9 /* BaseButton.swift in Sources */,
 				CFE8BD4D22DD27C700A861C9 /* PathResponse.swift in Sources */,
 				CFE8BD6922DDD22600A861C9 /* UIEdgeInsetsExtension.swift in Sources */,
+				CFE8BD6D22DDD75600A861C9 /* BaseViewController.swift in Sources */,
 				CFE8BD0D22DCEB7900A861C9 /* AppDelegate.swift in Sources */,
 				CFE8BD6322DDC84600A861C9 /* BaseLabel.swift in Sources */,
+				CFE8BD7222DDE5A600A861C9 /* CodeGeneratorViewModel.swift in Sources */,
 				CFE8BD5322DD294E00A861C9 /* NetworkManager.swift in Sources */,
 				CFE8BD6722DDD09C00A861C9 /* UIButtonExtension.swift in Sources */,
 				CFE8BD4222DD245D00A861C9 /* AppNetwork.swift in Sources */,
 				CFE8BD5D22DDC74600A861C9 /* UIVIewExtension.swift in Sources */,
 				CFE8BD4022DCF3E500A861C9 /* Network.swift in Sources */,
-				CFE8BD4F22DD283E00A861C9 /* ErrorResponse.swift in Sources */,
 				CFE8BD4A22DD268D00A861C9 /* Constants.swift in Sources */,
 				CFE8BD5F22DDC7C400A861C9 /* CodeGeneratorViewController.swift in Sources */,
 				CFE8BD6122DDC7E000A861C9 /* CodeGeneratorView.swift in Sources */,
+				CFE8BD6B22DDD71700A861C9 /* UINavigationControllerExtension.swift in Sources */,
 				CFE8BD4B22DD269000A861C9 /* StyleManager.swift in Sources */,
 				CFE8BD5122DD289600A861C9 /* CodeResponse.swift in Sources */,
 			);

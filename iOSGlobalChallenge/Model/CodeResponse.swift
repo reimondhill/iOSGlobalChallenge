@@ -13,12 +13,10 @@ struct CodeResponse:Codable{
     
     let path:String?
     let responseCode:String?
-    let error:String?
     
     enum CodingKeys: String, CodingKey {
         case path
         case responseCode = "response_code"
-        case error
     }
     
 }

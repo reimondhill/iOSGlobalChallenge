@@ -13,7 +13,11 @@ import RxSwift
 class AppNetwork:NSObject, Network{
    
     var baseURLString: String{
-        return "http://localhost:8000"
+        if let endPoint = ProcessInfo.processInfo.environment["ENDPOINT"] {
+            print(logClassName, "Got IP = \(endPoint)")
+            return endPoint
+        }
+        return ""
     }
     
     

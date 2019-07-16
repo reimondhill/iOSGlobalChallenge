@@ -12,11 +12,9 @@ import Foundation
 struct PathResponse:Codable{
     
     let nextPath:String?
-    let error:String?
     
     enum CodingKeys: String, CodingKey {
         case nextPath = "next_path"
-        case error
     }
     
 }

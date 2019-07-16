@@ -13,7 +13,7 @@ extension UIColor{
     
     //MARK:- App Colors Extension
     static var accentColor:UIColor {
-        return UIColor(red: 187.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1)
+        return UIColor(red: 11.0/255.0, green: 91.0/255.0, blue: 164.0/255.0, alpha: 1)
     }
     
     static var defaultSeparator:UIColor {
@@ -58,14 +58,14 @@ extension UIColor{
     
     //MARK: Views
     static var mainViewBackground:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
-    }
-    static var popupViewBackground:UIColor{
-        return UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.4)
+        return UIColor(red: 215.0/255.0, green: 215.0/255.0, blue: 215.0/255.0, alpha: 1)
     }
     
     static var primaryViewBackground:UIColor{
         return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)
+    }
+    static var primaryViewBorder:UIColor{
+        return primaryViewBackground
     }
     
     static var selectionBackground:UIColor{
@@ -75,23 +75,23 @@ extension UIColor{
     
     //MARK: Button
     static var mainButtonBackground:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+        return accentColor
     }
     static var mainButtonBorder:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+        return mainButtonBackground
     }
-    static var mainButtonTextColor:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+    static var mainButtonText:UIColor{
+        return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)
     }
     
     static var mainButtonDisabledBackground:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+        return UIColor(red: 185.0/255.0, green: 185.0/255.0, blue: 185.0/255.0, alpha: 1)
     }
     static var mainButtonDisabledBorder:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+        return mainButtonDisabledBackground
     }
-    static var mainButtonDisabledTextColor:UIColor{
-        return UIColor(red: 242.0/255.0, green: 239.0/255.0, blue: 236.0/255.0, alpha: 1)
+    static var mainButtonDisabledText:UIColor{
+        return secondaryText
     }
     
 }

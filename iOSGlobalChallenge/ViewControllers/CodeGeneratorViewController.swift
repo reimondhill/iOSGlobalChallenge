@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeGeneratorViewController: UIViewController {
+class CodeGeneratorViewController: BaseViewController {
     
     //MARK:- Properties
     //MARK: Constants

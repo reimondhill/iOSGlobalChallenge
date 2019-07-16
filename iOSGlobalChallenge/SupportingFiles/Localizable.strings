@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  iOSGlobalChallenge
+
+  Created by Ramon Haro Marques on 16/07/2019.
+  Copyright © 2019 Reimond Hill. All rights reserved.
+*/
+
+"messages.generateCode" = "Generate code";
+"messages.responseCode" = "Response Code: %@";
+"messages.timesFetched" = "Times Fetched: %d";
+
+"messages.notAvailable" = "Not available";
+
+"messages.error.tryAgain" = "An error has occured. Try again.";
