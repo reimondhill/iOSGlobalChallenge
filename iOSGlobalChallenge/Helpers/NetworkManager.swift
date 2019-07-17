@@ -19,27 +19,19 @@ class NetworkManager: NSObject {
         case noResponse
     }
     
-    static let shared = NetworkManager()
-    let network:Network
-    
     let disposeBag = DisposeBag()
     
-    //OBS -> Persistancy is done by UserDefaults. Despite the app being prepared for CoreData, there is not enought content right now. Maybe in the future.
-    let lastPath:BehaviorRelay<String?> = BehaviorRelay(value: nil)
-    private let lastPathIdentifier = "lastPathIdentifier"
-    private let userDefaults = UserDefaults.standard
+    let network:Network
+    let networkURL:NetworkURL
     
-
+    
+    
     //MARK:- Constructor
-    required init(network:Network = AppNetwork()){
+    required init(network:Network = AppNetwork(), networkURL:NetworkURL = NetworkURL()){
         
         self.network = network
-        if let lastPath = userDefaults.value(forKey: lastPathIdentifier) as? String{
-            self.lastPath.accept(lastPath)
-        }
-        
+        self.networkURL = networkURL
         super.init()
-        setupBinders()
         
     }
     
@@ -50,39 +42,32 @@ class NetworkManager: NSObject {
 extension NetworkManager{
     
     ///Retrieves a new 'nextPath' and a new code
-    func generatePathAndGetCode() throws -> Observable<CodeResponse>{
+    func generatePathAndGetCode() -> Observable<CodeResponse>{
 
         return Observable<CodeResponse>.create({ [weak self] (observer) -> Disposable in
-            guard let strongSelf = self else{ return Disposables.create() }
             
-            do{
-                let newPathResponseObservable = try strongSelf.generateNewPath()
-                newPathResponseObservable.subscribe(onNext: { (_) in
-                    
-                    do{
-                        let codeResponseObservable = try strongSelf.generateCode()
-                        codeResponseObservable.subscribe(onNext: { (codeResponse) in
-                            observer.onNext(codeResponse)
-                            observer.onCompleted()
-                        }, onError: { (error) in
-                            observer.onError(error)
-                        })
-                        .disposed(by: strongSelf.disposeBag)
-                    }
-                    catch{
-                        observer.onError(error)
-                    }
-                    
-                    
+            guard let strongSelf = self else{
+                observer.onCompleted()
+                return Disposables.create()
+            }
+            
+            print("TEST -> ", strongSelf.networkURL.baseURL.value)
+            print("TEST -> ", strongSelf.networkURL.nextURL.value)
+            
+            strongSelf.generateNewPath().subscribe(onNext: { (_) in
+                
+                strongSelf.generateCode().subscribe(onNext: { (codeResponse) in
+                    observer.onNext(codeResponse)
+                    observer.onCompleted()
                 }, onError: { (error) in
                     observer.onError(error)
                 })
                 .disposed(by: strongSelf.disposeBag)
                 
-            }
-            catch{
+            }, onError: { (error) in
                 observer.onError(error)
-            }
+            })
+                .disposed(by: strongSelf.disposeBag)
             
             return Disposables.create()
         })
@@ -90,15 +75,10 @@ extension NetworkManager{
     }
     
     ///Retrieve the new code using the 'lastPath'. If nil or invalid, it will generate a newPath and get the code
-    func generateCode() throws ->Observable<CodeResponse>{
+    func generateCode() -> Observable<CodeResponse>{
         
-        if let lastPath =  lastPath.value{
-            
-            let nextPath = "\(network.baseURLString)/\(lastPath)/"
-            
-            guard let baseURL = URL(string: nextPath) else {
-                throw NetworkError.invalidURL
-            }
+        if let nextURL =  networkURL.nextURL.value{
+            print(logClassName, "Getting code from, ", nextURL)
             
             return Observable<CodeResponse>.create({ [weak self] (observer) -> Disposable in
                 
@@ -107,9 +87,7 @@ extension NetworkManager{
                     return Disposables.create()
                 }
                 
-                print(strongSelf.logClassName, "Getting code from, ", baseURL)
-                
-                let codeResponseObservable:Observable<CodeResponse> = strongSelf.network.fetchCodable(urlRequest: URLRequest(url: baseURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 5))
+                let codeResponseObservable:Observable<CodeResponse> = strongSelf.network.fetchCodable(urlRequest: URLRequest(url: nextURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10))
                 
                 codeResponseObservable.subscribe(onNext: { (codeResponse) in
                     
@@ -118,24 +96,17 @@ extension NetworkManager{
                     
                 }, onError: { (error) in
                     
-                    do{
-                        
-                        try strongSelf.generatePathAndGetCode().subscribe(onNext: { (codeResponse) in
-                            observer.onNext(codeResponse)
-                            observer.onCompleted()
-                        }, onError: { (error) in
-                            strongSelf.lastPath.accept(nil)
-                            observer.onError(error)
-                        })
-                        .disposed(by: strongSelf.disposeBag)
-                        
-                    }
-                    catch{
+                    strongSelf.generatePathAndGetCode().subscribe(onNext: { (codeResponse) in
+                        observer.onNext(codeResponse)
+                        observer.onCompleted()
+                    }, onError: { (error) in
+                        strongSelf.networkURL.nextURL.accept(nil)
                         observer.onError(error)
-                    }
-    
-                })
+                    })
                     .disposed(by: strongSelf.disposeBag)
+                    
+                })
+                .disposed(by: strongSelf.disposeBag)
                 
                 return Disposables.create()
                 
@@ -143,18 +114,13 @@ extension NetworkManager{
             
         }
         else{
-            return try generatePathAndGetCode()
+            return generatePathAndGetCode()
         }
         
     }
     
     ///Retrieves a new path
-    func generateNewPath() throws ->Observable<PathResponse>{
-        
-        
-        guard let baseURL = URL(string: network.baseURLString) else {
-            throw NetworkError.invalidURL
-        }
+    func generateNewPath() ->Observable<PathResponse>{
         
         return Observable<PathResponse>.create({ [weak self] (observer) -> Disposable in
             
@@ -163,23 +129,26 @@ extension NetworkManager{
                 return Disposables.create()
             }
             
+            guard let baseURL = strongSelf.networkURL.baseURL.value else{
+                observer.onError(NetworkError.invalidURL)
+                return Disposables.create()
+            }
+            
             let pathObservable: Observable<PathResponse> = strongSelf.network.fetchCodable(urlRequest: URLRequest(url: baseURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 5))
             
             pathObservable.subscribe(onNext: { (pathResponse) in
                 
                 if let pathString = pathResponse.nextPath{
-                    //OBS -> Assuming the response is correct by now
-                    let pathStringComponents = pathString.components(separatedBy: "/")
-                    strongSelf.lastPath.accept(pathStringComponents[pathStringComponents.count - 2])
+                    strongSelf.networkURL.nextURL.accept(URL(string: pathString))
                 }
                 else{
-                    strongSelf.lastPath.accept(nil)
+                    strongSelf.networkURL.nextURL.accept(nil)
                 }
                 observer.onNext(pathResponse)
                 observer.onCompleted()
                 
             },onError: { (error) in
-                strongSelf.lastPath.accept(nil)
+                strongSelf.networkURL.nextURL.accept(nil)
                 observer.onError(error)
             })
             .disposed(by: strongSelf.disposeBag)
@@ -187,27 +156,6 @@ extension NetworkManager{
             return Disposables.create()
             
         })
-        
-    }
-    
-}
-
-
-//MARK:- Private methods
-private extension NetworkManager{
-    
-    func setupBinders(){
-        
-        lastPath
-            .asObservable()
-            .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] (lastPath) in
-                
-                guard let strongSelf = self else{ return }
-                strongSelf.userDefaults.set(lastPath, forKey: strongSelf.lastPathIdentifier)
-                
-            })
-            .disposed(by: disposeBag)
         
     }
     

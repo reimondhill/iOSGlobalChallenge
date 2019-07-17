@@ -14,15 +14,8 @@ enum NetworkError:Error {
     case invalidURL
 }
 
-protocol NetworkURL {
-    
-    ///StringURL for baseURL
-    var baseURLString:String{get}
+protocol Network {
 
-}
-
-protocol Network:NetworkURL {
-    
     /// Perform GET/POST request returning the result decoded object
     ///
     /// - Parameters:

@@ -211,13 +211,13 @@ extension UIView{
         if #available(iOS 11.0, *), safeView{
             anchoredConstraints.top = topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor, constant: padding.top)
             anchoredConstraints.trailing = trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor, constant: -padding.right)
-            anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor, constant: padding.bottom)
+            anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor, constant: -padding.bottom)
             anchoredConstraints.leading = leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor, constant: padding.left)
         }
         else {
             anchoredConstraints.top = topAnchor.constraint(equalTo: superview.topAnchor, constant: padding.top)
             anchoredConstraints.trailing = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -padding.right)
-            anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: padding.bottom)
+            anchoredConstraints.bottom = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -padding.bottom)
             anchoredConstraints.leading = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: padding.left)
         }
 

@@ -6,20 +6,12 @@
 //  Copyright © 2019 Reimond Hill. All rights reserved.
 //
 
-import XCTest
-@testable import iOSGlobalChallenge
-
 import Foundation
 import RxSwift
 
 
 class MockNetwork: NSObject, Network {
-    
-    var baseURLString: String{
-        guard let url = Bundle.main.url(forResource: "nextPathResponse", withExtension: "json") else{ return "" }
-        return url.absoluteString
-    }
-    
+
     func fetchCodable<T>(urlRequest: URLRequest) -> Observable<T> where T : Decodable, T : Encodable {
         
          return Observable<T>.create({ (observer) -> Disposable in

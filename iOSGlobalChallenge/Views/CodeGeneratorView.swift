@@ -35,6 +35,7 @@ class CodeGeneratorView: UIView {
         
         rtView.accessibilityIdentifier = "CodeLabel"
         rtView.textAlignment = .left
+        rtView.text = codeGeneratorViewModel.value.codeFormattedString
         
         return rtView
     }()
@@ -42,15 +43,15 @@ class CodeGeneratorView: UIView {
         let rtView = BaseLabel(withConfiguration: .normalLight)
         
         rtView.accessibilityIdentifier = "CounterLabel"
+        rtView.text = codeGeneratorViewModel.value.counterFormattedString
         
         return rtView
     }()
     lazy private (set) var generateButton:BaseButton = {
         let rtView = BaseButton(withConfiguration: .normal)
         
-        rtView.setTitle(NSLocalizedString("messages.generateCode",
-                                          comment: ""),
-                        for: .normal)
+        rtView.setTitle(NSLocalizedString("messages.generateCode", comment: ""), for: .normal)
+        rtView.accessibilityIdentifier = "GenerateButton"
         
         return rtView
     }()
@@ -157,11 +158,9 @@ private extension CodeGeneratorView{
                 
                 self.generateButton.isEnabled = !isFetching
                 if isFetching{
-                    self.indicator.isHidden = false
                     self.indicator.startAnimating()
                 }
                 else{
-                    self.indicator.isHidden = true
                     self.indicator.stopAnimating()
                 }
                 
@@ -176,27 +175,20 @@ private extension CodeGeneratorView{
                 print(strongSelf.logClassName, "Fetching data ...")
                 
                 strongSelf.codeGeneratorViewModel.value.isFetching.accept(true)
+  
+                let codeResponseObservable = strongSelf.networkManager.generateCode()
                 
-                do{
-                    
-                    let codeResponseObservable = try strongSelf.networkManager.generateCode()
-                    
-                    codeResponseObservable
-                        .observeOn(MainScheduler.instance)
-                        .subscribe(onNext: { (codeResponse) in
-                            print(strongSelf.logClassName,"Code response next value = ", codeResponse.responseCode ?? "")
-                            strongSelf.updateView(codeResponse: codeResponse)
-                        }, onError: { (error) in
-                            print(strongSelf.logClassName,"ERROR fetching data: ", error.localizedDescription)
-                            strongSelf.updateView(codeResponse: nil)
-                            
-                        })
-                        .disposed(by: strongSelf.disposeBag)
-                    
-                }
-                catch{
-                    print(strongSelf.logClassName,"ERROR fetching data: ", error.localizedDescription)
-                }
+                codeResponseObservable
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { (codeResponse) in
+                        print(strongSelf.logClassName,"Code response next value = ", codeResponse.responseCode ?? "")
+                        strongSelf.updateView(codeResponse: codeResponse)
+                    }, onError: { (error) in
+                        print(strongSelf.logClassName,"ERROR fetching data: ", error.localizedDescription)
+                        strongSelf.updateView(codeResponse: nil)
+                        
+                    })
+                    .disposed(by: strongSelf.disposeBag)
                 
             })
             .disposed(by: disposeBag)

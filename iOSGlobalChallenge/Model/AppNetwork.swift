@@ -11,17 +11,7 @@ import RxSwift
 
 
 class AppNetwork:NSObject, Network{
-    
-    var baseURLString: String{
-        
-        if let ipEndpoint = ProcessInfo.processInfo.environment["IP"] {
-            print(logClassName, "Got IP = \(ipEndpoint)")
-            return "http://\(ipEndpoint):8000"
-        }
-        return "http://localhost:8000"
-    }
-    
-    
+
     func fetchCodable<T>(urlRequest: URLRequest) -> Observable<T> where T : Decodable, T : Encodable {
         
         return Observable<T>.create({ [weak self] (observer) -> Disposable in

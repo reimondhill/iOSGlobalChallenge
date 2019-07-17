@@ -24,7 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CodeGeneratorViewController(networkManager: NetworkManager.shared))
+        
+        if ProcessInfo.processInfo.arguments.contains("TEST"){
+            print(logClassName, "I am testing")
+            window?.rootViewController = UINavigationController(rootViewController: CodeGeneratorViewController(networkManager: NetworkManager(network: MockNetwork(), networkURL: MockNetworkURL())))
+        }
+        else{
+            window?.rootViewController = UINavigationController(rootViewController: CodeGeneratorViewController(networkManager: NetworkManager()))
+        }
         
         return true
     }
