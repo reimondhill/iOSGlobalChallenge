@@ -27,7 +27,6 @@ class CodeGeneratorView: UIView {
         let rtView = UIActivityIndicatorView()
         
         rtView.color = UIColor.defaultTint
-        rtView.isHidden = true
         
         return rtView
     }()
