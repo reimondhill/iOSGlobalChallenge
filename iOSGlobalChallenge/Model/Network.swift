@@ -31,5 +31,5 @@ protocol Network:NetworkURL {
     //func fetchCodable<T:Codable>(urlRequest:URLRequest, completion:@escaping (Result<T,Error>)->Void)
     
     func fetchCodable<T:Codable>(urlRequest:URLRequest) -> Observable<T>
-    
+
 }

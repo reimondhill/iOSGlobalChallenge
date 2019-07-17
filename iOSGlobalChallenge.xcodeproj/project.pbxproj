@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		CF674C0122DE325800C035DF /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF674C0022DE325800C035DF /* ToastSwiftFramework.framework */; };
+		CF674C0422DE45A400C035DF /* codeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CF674C0222DE45A400C035DF /* codeResponse.json */; };
+		CF674C0522DE45A400C035DF /* nextPathResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CF674C0322DE45A400C035DF /* nextPathResponse.json */; };
+		CF674C0822DE468D00C035DF /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF674C0722DE468D00C035DF /* ExtensionsTests.swift */; };
+		CF674C0922DE4C9400C035DF /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD4622DD24B800A861C9 /* UIViewControllerExtension.swift */; };
+		CF674C0B22DEEA5600C035DF /* ModelAndNeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF674C0A22DEEA5600C035DF /* ModelAndNeworkTests.swift */; };
+		CF674C0E22DEEB0000C035DF /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF674C0D22DEEB0000C035DF /* MockNetwork.swift */; };
+		CF674C0F22DEF29300C035DF /* nextPathResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CF674C0322DE45A400C035DF /* nextPathResponse.json */; };
+		CF674C1122DF001000C035DF /* BaseViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF674C1022DF001000C035DF /* BaseViewTests.swift */; };
+		CF674C1322DF00DF00C035DF /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF674C1222DF00DF00C035DF /* ViewModelTests.swift */; };
 		CFE8BD0D22DCEB7900A861C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD0C22DCEB7900A861C9 /* AppDelegate.swift */; };
 		CFE8BD1522DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFE8BD1322DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodeld */; };
 		CFE8BD1722DCEB7A00A861C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFE8BD1622DCEB7A00A861C9 /* Assets.xcassets */; };
@@ -56,6 +65,13 @@
 
 /* Begin PBXFileReference section */
 		CF674C0022DE325800C035DF /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
+		CF674C0222DE45A400C035DF /* codeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = codeResponse.json; sourceTree = "<group>"; };
+		CF674C0322DE45A400C035DF /* nextPathResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nextPathResponse.json; sourceTree = "<group>"; };
+		CF674C0722DE468D00C035DF /* ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
+		CF674C0A22DEEA5600C035DF /* ModelAndNeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAndNeworkTests.swift; sourceTree = "<group>"; };
+		CF674C0D22DEEB0000C035DF /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
+		CF674C1022DF001000C035DF /* BaseViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewTests.swift; sourceTree = "<group>"; };
+		CF674C1222DF00DF00C035DF /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		CFE8BD0922DCEB7900A861C9 /* iOSGlobalChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSGlobalChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE8BD0C22DCEB7900A861C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFE8BD1422DCEB7900A861C9 /* iOSGlobalChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSGlobalChallenge.xcdatamodel; sourceTree = "<group>"; };
@@ -120,6 +136,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF674C0622DE45C500C035DF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CF674C0222DE45A400C035DF /* codeResponse.json */,
+				CF674C0322DE45A400C035DF /* nextPathResponse.json */,
+				CFE8BD2622DCEB7A00A861C9 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CF674C0C22DEEAE900C035DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF674C0D22DEEB0000C035DF /* MockNetwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CFE8BD0022DCEB7900A861C9 = {
 			isa = PBXGroup;
 			children = (
@@ -158,8 +192,13 @@
 		CFE8BD2322DCEB7A00A861C9 /* iOSGlobalChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF674C0C22DEEAE900C035DF /* Model */,
 				CFE8BD2422DCEB7A00A861C9 /* iOSGlobalChallengeTests.swift */,
-				CFE8BD2622DCEB7A00A861C9 /* Info.plist */,
+				CF674C0722DE468D00C035DF /* ExtensionsTests.swift */,
+				CF674C0A22DEEA5600C035DF /* ModelAndNeworkTests.swift */,
+				CF674C1222DF00DF00C035DF /* ViewModelTests.swift */,
+				CF674C1022DF001000C035DF /* BaseViewTests.swift */,
+				CF674C0622DE45C500C035DF /* SupportingFiles */,
 			);
 			path = iOSGlobalChallengeTests;
 			sourceTree = "<group>";
@@ -362,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF674C0F22DEF29300C035DF /* nextPathResponse.json in Resources */,
 				CFE8BD1A22DCEB7A00A861C9 /* LaunchScreen.storyboard in Resources */,
 				CFE8BD6F22DDDFFE00A861C9 /* Localizable.strings in Resources */,
 				CFE8BD1722DCEB7A00A861C9 /* Assets.xcassets in Resources */,
@@ -372,6 +412,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF674C0522DE45A400C035DF /* nextPathResponse.json in Resources */,
+				CF674C0422DE45A400C035DF /* codeResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +439,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -406,6 +449,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +467,7 @@
 				CFE8BD6522DDC9C800A861C9 /* BaseButton.swift in Sources */,
 				CFE8BD4D22DD27C700A861C9 /* PathResponse.swift in Sources */,
 				CFE8BD6922DDD22600A861C9 /* UIEdgeInsetsExtension.swift in Sources */,
+				CF674C0922DE4C9400C035DF /* UIViewControllerExtension.swift in Sources */,
 				CFE8BD6D22DDD75600A861C9 /* BaseViewController.swift in Sources */,
 				CFE8BD0D22DCEB7900A861C9 /* AppDelegate.swift in Sources */,
 				CFE8BD6322DDC84600A861C9 /* BaseLabel.swift in Sources */,
@@ -445,7 +490,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF674C0E22DEEB0000C035DF /* MockNetwork.swift in Sources */,
 				CFE8BD2522DCEB7A00A861C9 /* iOSGlobalChallengeTests.swift in Sources */,
+				CF674C1322DF00DF00C035DF /* ViewModelTests.swift in Sources */,
+				CF674C0B22DEEA5600C035DF /* ModelAndNeworkTests.swift in Sources */,
+				CF674C1122DF001000C035DF /* BaseViewTests.swift in Sources */,
+				CF674C0822DE468D00C035DF /* ExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +703,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
-				INFOPLIST_FILE = iOSGlobalChallengeTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSGlobalChallengeTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,7 +728,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33482W4AH2;
-				INFOPLIST_FILE = iOSGlobalChallengeTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSGlobalChallengeTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

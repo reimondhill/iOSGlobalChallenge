@@ -11,10 +11,6 @@ import UIKit
 class BaseViewController: UIViewController {
 
     //MARK:- Properties
-    //MARK: Vars
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
     
 }
 

@@ -23,15 +23,26 @@ class CodeGeneratorView: UIView {
     
     //MARK:- Variables
     //UI
+    lazy private (set) var indicator:UIActivityIndicatorView = {
+        let rtView = UIActivityIndicatorView()
+        
+        rtView.color = UIColor.defaultTint
+        rtView.isHidden = true
+        
+        return rtView
+    }()
     lazy private (set) var codeLabel:BaseLabel = {
         let rtView = BaseLabel(withConfiguration: .normal)
         
+        rtView.accessibilityIdentifier = "CodeLabel"
         rtView.textAlignment = .left
         
         return rtView
     }()
     lazy private (set) var counterLabel:BaseLabel = {
         let rtView = BaseLabel(withConfiguration: .normalLight)
+        
+        rtView.accessibilityIdentifier = "CounterLabel"
         
         return rtView
     }()
@@ -80,6 +91,7 @@ private extension CodeGeneratorView{
     
     func setupView(){
         
+        accessibilityIdentifier = "CodeGeneratorView"
         backgroundColor = UIColor.primaryViewBackground
         addBorder(borderWidth: Separators.xSmall, radius: BorderRadius.large, color: UIColor.primaryViewBorder)
         
@@ -106,6 +118,14 @@ private extension CodeGeneratorView{
                          bottom: nil,
                          trailing: trailingAnchor,
                          padding: .init(top: Margins.xLarge, left: Margins.medium, bottom: Margins.medium, right: Margins.medium))
+        
+        addSubview(indicator)
+        indicator.anchor(top: nil,
+                         leading: nil,
+                         bottom: nil,
+                         trailing: nil,
+                         centerX: centerXAnchor,
+                         centerY: centerYAnchor)
         
         setupBinder()
         
@@ -134,8 +154,19 @@ private extension CodeGeneratorView{
         codeGeneratorViewModel.value.isFetching
             .asObservable()
             .observeOn(MainScheduler.instance)
-            .map({ !$0 })
-            .bind(to: generateButton.rx.isEnabled)
+            .subscribe(onNext: { [unowned self] (isFetching) in
+                
+                self.generateButton.isEnabled = !isFetching
+                if isFetching{
+                    self.indicator.isHidden = false
+                    self.indicator.startAnimating()
+                }
+                else{
+                    self.indicator.isHidden = true
+                    self.indicator.stopAnimating()
+                }
+                
+            })
             .disposed(by: disposeBag)
         
         generateButton.rx.tap
@@ -146,29 +177,20 @@ private extension CodeGeneratorView{
                 print(strongSelf.logClassName, "Fetching data ...")
                 
                 strongSelf.codeGeneratorViewModel.value.isFetching.accept(true)
-                strongSelf.codeGeneratorViewModel.value.counter.accept(strongSelf.codeGeneratorViewModel.value.counter.value + 1)
                 
                 do{
                     
-                    let codeResponseObservable = try strongSelf.networkManager.getCodeResponse()
+                    let codeResponseObservable = try strongSelf.networkManager.generateCode()
                     
                     codeResponseObservable
                         .observeOn(MainScheduler.instance)
                         .subscribe(onNext: { (codeResponse) in
                             print(strongSelf.logClassName,"Code response next value = ", codeResponse.responseCode ?? "")
-                            strongSelf.codeGeneratorViewModel.value.code.accept(codeResponse.responseCode)
-                            strongSelf.codeGeneratorViewModel.value.isFetching.accept(false)
+                            strongSelf.updateView(codeResponse: codeResponse)
                         }, onError: { (error) in
                             print(strongSelf.logClassName,"ERROR fetching data: ", error.localizedDescription)
-                            strongSelf.makeToast(NSLocalizedString("messages.error.tryAgain", comment: ""), duration: 2)
-                            strongSelf.codeGeneratorViewModel.value.code.accept(nil)
-                            strongSelf.codeGeneratorViewModel.value.isFetching.accept(false)
+                            strongSelf.updateView(codeResponse: nil)
                             
-                        }, onCompleted: {
-                            print(strongSelf.logClassName,"Completed")
-                            
-                        }, onDisposed: {
-                            print(strongSelf.logClassName,"Disposed")
                         })
                         .disposed(by: strongSelf.disposeBag)
                     
@@ -179,6 +201,18 @@ private extension CodeGeneratorView{
                 
             })
             .disposed(by: disposeBag)
+        
+    }
+    
+    func updateView(codeResponse:CodeResponse?){
+        
+        codeGeneratorViewModel.value.isFetching.accept(false)
+        codeGeneratorViewModel.value.counter.accept(codeGeneratorViewModel.value.counter.value + 1)
+        codeGeneratorViewModel.value.code.accept(codeResponse?.responseCode)
+        
+        if codeResponse == nil{
+            makeToast(NSLocalizedString("messages.error.tryAgain", comment: ""), duration: 2)
+        }
         
     }
     

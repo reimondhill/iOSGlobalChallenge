@@ -10,25 +10,34 @@ import XCTest
 
 class iOSGlobalChallengeUITests: XCTestCase {
 
+    var app: XCUIApplication!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
+        continueAfterFailure = true
+        
+        app = XCUIApplication()
+        //TODO
+        //Uncomment next line to use MOCKNetwork for the app
+        //app.launchArguments = ["TEST"]
+        app.launch()
+        
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testCodeGeneratorView(){
+        
+        let codeGeneratorView = app.otherElements["CodeGeneratorView"]
+        let codeLabel = codeGeneratorView.staticTexts["CodeLabel"]
+        let activityIndicator = codeGeneratorView.activityIndicators.element(boundBy: 0)
+        
+        XCTAssert(codeLabel.exists)
+        XCTAssertFalse(activityIndicator.exists)
+        
+        //TODO
     }
 
 }

@@ -60,7 +60,7 @@ extension NetworkManager{
                 newPathResponseObservable.subscribe(onNext: { (_) in
                     
                     do{
-                        let codeResponseObservable = try strongSelf.getCodeResponse()
+                        let codeResponseObservable = try strongSelf.generateCode()
                         codeResponseObservable.subscribe(onNext: { (codeResponse) in
                             observer.onNext(codeResponse)
                             observer.onCompleted()
@@ -90,7 +90,7 @@ extension NetworkManager{
     }
     
     ///Retrieve the new code using the 'lastPath'. If nil or invalid, it will generate a newPath and get the code
-    func getCodeResponse() throws ->Observable<CodeResponse>{
+    func generateCode() throws ->Observable<CodeResponse>{
         
         if let lastPath =  lastPath.value{
             
@@ -117,8 +117,23 @@ extension NetworkManager{
                     observer.onCompleted()
                     
                 }, onError: { (error) in
-                    strongSelf.lastPath.accept(nil)
-                    observer.onError(error)
+                    
+                    do{
+                        
+                        try strongSelf.generatePathAndGetCode().subscribe(onNext: { (codeResponse) in
+                            observer.onNext(codeResponse)
+                            observer.onCompleted()
+                        }, onError: { (error) in
+                            strongSelf.lastPath.accept(nil)
+                            observer.onError(error)
+                        })
+                        .disposed(by: strongSelf.disposeBag)
+                        
+                    }
+                    catch{
+                        observer.onError(error)
+                    }
+    
                 })
                     .disposed(by: strongSelf.disposeBag)
                 
@@ -133,6 +148,7 @@ extension NetworkManager{
         
     }
     
+    ///Retrieves a new path
     func generateNewPath() throws ->Observable<PathResponse>{
         
         

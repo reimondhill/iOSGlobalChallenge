@@ -12,7 +12,7 @@ extension UINavigationController {
     
     //MARK:- Properties
     override open var preferredStatusBarStyle : UIStatusBarStyle {
-        return topViewController?.preferredStatusBarStyle ?? .lightContent
+        return .lightContent
     }
     
 }
